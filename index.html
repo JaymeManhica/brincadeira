@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advinha</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .msg h1 {
+            color: #333;
+        }
+
+        .advinha {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        input {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mensagem {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        .resultado {
+            margin-top: 20px;
+        }
+
+        .resultado label {
+            display: block;
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="mensagem">
+            <p>Este é um aplicativo que LÊ pensamentos, você precisa apenas pensar num numero e digita abaixo</p>
+        </div>
+        <div class="msg">
+            <h1>Leitor de Pensamento</h1>
+        </div>
+        
+        <div class="advinha">
+            <label for="number">Pense num numero e escreva no campo em branco</label>
+            <input type="password" id="numberInput">
+            <button onclick="advinharNumero()">Adivinhar</button>
+        </div>
+        <div class="resultado">
+            <label for="resultado" id="resultadoLabel"></label>
+        </div>
+
+        <script>
+            function advinharNumero() {
+                const numberInput = document.getElementById('numberInput').value;
+                setTimeout(() => {
+                    document.getElementById('resultadoLabel').innerText = `o Número que voce pensou foi: ${numberInput}`;
+                }, 5000);
+            }
+        </script>
+    </div>
+</body>
+</html>
