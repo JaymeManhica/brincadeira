@@ -71,6 +71,23 @@
             font-size: 18px;
             font-weight: bold;
         }
+        .processar {
+            text-align: center;
+        }
+
+        .processar img {
+            max-width: 100%;
+            height: auto;
+            transition: opacity 0.5s ease-out;
+            opacity: 0
+        }
+        #process{
+            max-width: 100%;
+            height: auto;
+            transition: opacity 0.5s ease-out;
+            opacity: 0;
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -88,15 +105,33 @@
             <input type="password" id="numberInput">
             <button onclick="advinharNumero()">Adivinhar</button>
         </div>
+        <div class="processar">
+            <img id="imagemProcessar" src="https://i.gifer.com/7MX9.gif" alt="">
+            <h2 id="process">
+                buscando o numero na sua mente. concentre-se
+            </h2>
+
+        </div>
         <div class="resultado">
             <label for="resultado" id="resultadoLabel"></label>
         </div>
 
         <script>
-            function advinharNumero() {
+               function advinharNumero() {
                 const numberInput = document.getElementById('numberInput').value;
+
+                // Exibir o gif
+                document.getElementById('imagemProcessar').style.opacity = '1';
+                document.getElementById('process').style.opacity = '1';
+
+                // Aguarde 5 segundos
                 setTimeout(() => {
-                    document.getElementById('resultadoLabel').innerText = `o Número que voce pensou foi: ${numberInput}`;
+                    // Tornar o gif invisível
+                    document.getElementById('imagemProcessar').style.opacity = '0';
+                    document.getElementById('process').style.opacity = '0'
+
+                    // Exibir o resultado
+                    document.getElementById('resultadoLabel').innerText = `O número que você pensou foi: ${numberInput}`;
                 }, 5000);
             }
         </script>
